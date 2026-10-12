@@ -51,9 +51,9 @@ h1,h2,h3,p,figure{margin:0}
 .nav button:hover{color:var(--ember)}
 .bar .btn{min-height:44px;padding:0 18px;font-size:12px}
 
-.mast{display:flex;flex-direction:column;gap:18px;padding-top:clamp(28px,4vw,56px);padding-bottom:clamp(20px,3vw,36px)}
-.mast .wm{width:78%}
-@media (max-width:860px){.mast .wm{width:90%}}
+.mast{display:flex;flex-direction:column;gap:16px;padding-top:clamp(28px,4vw,56px);padding-bottom:clamp(20px,3vw,36px)}
+.mast .wm{width:56%;max-width:760px}
+@media (max-width:860px){.mast .wm{width:74%}}
 .prose h2{font-family:var(--sans);font-size:24px;font-weight:700;color:var(--paper);margin-top:14px}
 .mast-row{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap}
 .clock{display:flex;gap:12px;white-space:nowrap}
@@ -157,9 +157,57 @@ a.person:hover b,a.person:hover .go{color:var(--ember)}
 .studio b{grid-column:1/-1;font-size:20px;font-weight:700}
 .studio span{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--soft);overflow-wrap:anywhere}
 .studio span i{display:block;font-style:normal;color:var(--mute);letter-spacing:.18em;text-transform:uppercase;font-size:11px;margin-bottom:2px}
-.subs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pitch{font-family:var(--serif);font-size:clamp(20px,2vw,26px);line-height:1.35;color:var(--soft);max-width:30em;margin-top:6px}
+.subform{max-width:560px;width:100%}
+.subform .err{min-height:20px;margin-top:8px}
+.mast .subform{margin-top:6px}
+#subscribe{border-top:1px solid var(--ember)}
+#subscribe h2{font-size:clamp(38px,5vw,72px);margin-top:12px}
+#subscribe .stand{margin-top:14px}
+.wa{display:flex;justify-content:space-between;align-items:center;gap:20px 48px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:clamp(32px,4vw,52px);padding-bottom:clamp(32px,4vw,52px)}
+.wa h2{font-size:clamp(22px,2.2vw,30px);font-weight:700;margin-top:10px}
+.wa p{color:var(--soft);margin-top:8px;font-size:16px;max-width:34em}
+.quiz{display:flex;flex-direction:column;gap:18px}
+.q-top{display:flex;flex-direction:column;gap:10px}
+.q-bar{height:2px;background:var(--line)}
+.q-bar i{display:block;height:2px;width:33%;background:var(--ember);transition:width .3s ease}
+.q-panel{display:flex;flex-direction:column;gap:16px}
+.q-panel h3{font-size:clamp(22px,2.2vw,28px);font-weight:700}
+.q-panel .f input{width:100%;min-height:50px;background:transparent;color:var(--paper);border:0;border-bottom:1px solid var(--edge);border-radius:0;font-family:var(--sans);font-size:17px;padding:8px 2px}
+.q-panel .f input:focus{outline:none;border-bottom-color:var(--paper)}
+.q-panel .f input::placeholder{color:var(--mute)}
+.qchips{display:flex;flex-wrap:wrap;gap:8px}
+.qchip{min-height:44px;padding:0 16px;border:1px solid var(--edge);border-radius:999px;font-size:15px;color:var(--soft)}
+.qchip:hover{border-color:var(--paper);color:var(--paper)}
+.qchip[aria-pressed="true"]{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.q-nav{display:flex;gap:10px;flex-wrap:wrap}
+.q-done h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.6vw,48px);letter-spacing:-.01em}
+.q-done p{color:var(--soft)}
+.q-done #q-done-wa{display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin-top:8px}
+.q-done #q-done-wa[hidden]{display:none}
+.steps{list-style:none;margin:10px 0 4px;padding:0;display:flex;flex-wrap:wrap;gap:10px 34px}
+.steps li{display:flex;align-items:baseline}
+.stp{font-family:var(--serif);font-size:clamp(22px,2.3vw,30px);line-height:1.2;color:var(--paper)}
+.stp{min-height:44px;display:inline-flex;align-items:center}
+button.stp:hover,a.stp:hover{color:var(--ember)}
+@media (max-width:860px){.steps{flex-direction:column;gap:2px}}
+.comments{scroll-margin-top:96px;max-width:820px;padding-bottom:clamp(44px,6vw,88px);display:flex;flex-direction:column;gap:12px}
+.comments h2{font-size:clamp(30px,3.4vw,46px)}
+#cusdis_thread{margin-top:10px;min-height:20px}
+#cusdis_thread iframe{width:100%;border:0}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1px solid var(--edge);cursor:pointer}
+.opt:hover{border-color:var(--paper)}
+.opt:has(input:checked){border-color:var(--ember)}
+.opt input{width:22px;height:22px;flex:none;margin:1px 0 0;accent-color:var(--ember)}
+.opt span{display:flex;flex-direction:column;gap:4px;color:var(--soft);font-size:15px;line-height:1.4}
+.opt b{color:var(--paper);font-size:17px;font-weight:600}
+.subs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,5vw,80px);align-items:start}
 .subrow{display:flex;gap:12px;align-items:stretch}
-.subrow input{flex:1;min-width:0}
+.subrow input{flex:1;min-width:0;min-height:54px;background:transparent;color:var(--paper);border:0;border-bottom:1px solid var(--paper);border-radius:0;font-family:var(--sans);font-size:17px;padding:0 2px}
+.subrow input::placeholder{color:var(--mute)}
+.subrow input:focus{outline:none;border-bottom-color:var(--ember)}
 .gate{display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);min-height:calc(100dvh - 70px)}
 .gate>img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;max-height:calc(100dvh - 70px)}
 .gate .pane{display:flex;flex-direction:column;justify-content:center;gap:18px;padding-top:40px;padding-bottom:40px;max-width:680px}
@@ -209,9 +257,6 @@ form .btn,.gate .btn{width:100%}
 
 <header class="bar wrap">
 <button data-go="home" aria-label="AZACUB home"><svg class="wm" viewBox="0 0 2946 712" aria-hidden="true"><use href="#wm"/></svg></button>
-<nav class="nav" aria-label="Main">
-<button data-go="home" data-nav="home">News</button>
-</nav>
 <button class="btn solid" data-go="subscribe">Subscribe</button>
 </header>
 
@@ -219,10 +264,7 @@ form .btn,.gate .btn{width:100%}
 <section class="view" data-view="home">
 <div class="wrap mast">
 <h1><svg class="wm" viewBox="0 0 2946 712" role="img" aria-label="AZACUB"><use href="#wm"/></svg></h1>
-<div class="mast-row mono">
-<span class="mute">A work in progress, in writing</span>
-<span class="clock"><span class="mute">London, UK</span><span class="ember" data-clock>--:--:--</span></span>
-</div>
+<div class="mono mute">A work in progress, in writing</div>
 </div>
 <div class="wrap rule lead" id="lead"></div>
 <div class="wrap rule sec motw" id="spot" hidden>
@@ -232,23 +274,6 @@ form .btn,.gate .btn{width:100%}
 <div class="wrap rule sec" id="latest">
 <div class="mono mute" style="margin-bottom:28px">More features</div>
 <div class="cards" id="cards"></div>
-</div>
-<div class="wrap rule sec"><p class="cond state">EVERY GIANT STARTS AS A CUB.</p></div>
-<div class="wrap rule sec subs" id="subscribe">
-<div>
-<div class="mono ember">The newsletter</div>
-<h2 class="h-serif" style="font-size:clamp(36px,4.6vw,64px);margin-top:14px">Stay in the loop</h2>
-<p class="stand" style="margin-top:16px">New features and member spotlights, sent straight to your inbox.</p>
-</div>
-<div>
-<form id="sub-form" method="post" target="_blank" novalidate>
-<div class="f"><label for="sub-email">Email address</label>
-<div class="subrow"><input id="sub-email" type="email" required autocomplete="email" placeholder="you@example.com" aria-describedby="sub-msg"><button class="btn solid" type="submit">Subscribe</button></div></div>
-<div class="err" id="sub-msg" role="status"></div>
-<p class="hint">We only use your email to send the AZACUB newsletter. Unsubscribe at any time.</p>
-</form>
-<a class="btn line" style="margin-top:8px" href="https://www.instagram.com/azacub_" target="_blank" rel="noopener">Follow @azacub_</a>
-</div>
 </div>
 </section>
 
@@ -265,18 +290,87 @@ form .btn,.gate .btn{width:100%}
 <div class="prose" id="a-body"></div>
 <aside class="side" id="a-side"></aside>
 </div>
+<div class="wrap comments" id="comments" aria-labelledby="c-h">
+<div class="mono ember">Comments</div>
+<h2 class="h-serif" id="c-h">Leave your thoughts.</h2>
+<p class="hint" id="c-note">No account needed. Comments appear once they've been approved.</p>
+<div id="cusdis_thread"></div>
+</div>
 </section>
 
+<section class="wrap rule sec subs" id="subscribe" aria-labelledby="sub-h">
+<div>
+<div class="mono ember">Stay connected</div>
+<h2 class="h-serif" id="sub-h">Don't miss the next one.</h2>
+<p class="stand">New posts and artist spotlights by email, and a WhatsApp community where creatives share work and collaborate. Choose one or both.</p>
+</div>
+<div class="quiz" id="quiz">
+<div class="q-top"><span class="mono mute" id="q-step" aria-live="polite">Step 1 of 3</span><div class="q-bar" aria-hidden="true"><i id="q-fill"></i></div></div>
 
+<div class="q-panel" data-step="1">
+<h3 id="q1-h">What kind of creative are you?</h3>
+<p class="hint">Pick as many as fit.</p>
+<div class="qchips" role="group" aria-labelledby="q1-h">
+<button type="button" class="qchip" aria-pressed="false" data-type="Artist">Artist</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Vocalist">Vocalist</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Rapper">Rapper</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Producer">Producer</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Songwriter">Songwriter</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Engineer">Engineer</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="DJ">DJ</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Photographer">Photographer</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Videographer">Videographer</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Editor">Editor</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Designer">Designer</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Stylist">Stylist</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Director">Director</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Content creator">Content creator</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Manager">Manager</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="A&amp;R">A&amp;R</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Just here to listen">Just here to listen</button>
+<button type="button" class="qchip" aria-pressed="false" data-type="Something else">Something else</button>
+</div>
+<div class="f" id="q-other-wrap" hidden><label for="q-other">Tell us what you do</label><input id="q-other" maxlength="60"></div>
+<div class="err" role="alert"></div>
+<div class="q-nav"><button type="button" class="btn solid" data-q="next">Next</button></div>
+</div>
 
+<div class="q-panel" data-step="2" hidden>
+<h3>A bit about you</h3>
+<div class="f"><label for="q-name">First name</label><input id="q-name" autocomplete="given-name" maxlength="40"></div>
+<div class="f"><label for="q-where">Where are you based? (optional)</label><input id="q-where" autocomplete="address-level2" placeholder="For example: Lewisham, Leeds, Lagos" maxlength="60"></div>
+<div class="err" role="alert"></div>
+<div class="q-nav"><button type="button" class="btn line" data-q="back">Back</button><button type="button" class="btn solid" data-q="next">Next</button></div>
+</div>
 
+<div class="q-panel" data-step="3" hidden>
+<h3 id="q3-h">How do you want to stay connected?</h3>
+<p class="hint">Choose one or both.</p>
+<div class="opts" role="group" aria-labelledby="q3-h">
+<label class="opt"><input type="checkbox" id="q-consent"><span><b>The newsletter</b>New posts and artist spotlights by email. Unsubscribe at any time.</span></label>
+<label class="opt" id="q-wa-opt"><input type="checkbox" id="q-wa-req"><span><b>The WhatsApp community</b>Request to join. Every member is approved by hand.</span></label>
+</div>
+<div class="f" id="q-email-wrap"><label for="q-email">Email address</label><input id="q-email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+<div class="err" role="alert"></div>
+<div class="q-nav"><button type="button" class="btn line" data-q="back">Back</button><button type="button" class="btn solid" data-q="submit" id="q-submit">Subscribe</button></div>
+</div>
+
+<div class="q-panel q-done" data-step="done" hidden tabindex="-1">
+<h3 id="q-done-h">You're in.</h3>
+<p id="q-done-mail" hidden>Check your inbox and confirm your email to finish signing up to the newsletter.</p>
+<div id="q-done-wa" hidden><p>Last step: send your request to join the WhatsApp community. Every member is approved by hand, so it may take a little while.</p><a class="btn solid" id="q-wa" target="_blank" rel="noopener">Request to join on WhatsApp</a></div>
+</div>
+</div>
+<form id="q-form" method="post" target="q-sink" hidden></form>
+<iframe name="q-sink" title="Sign-up" hidden></iframe>
+</section>
 </main>
 
 <footer class="wrap rule">
-<div style="display:flex;flex-direction:column;gap:12px"><svg class="wm" viewBox="0 0 2946 712" aria-hidden="true"><use href="#wm"/></svg><span class="mono mute">A work in progress, in writing</span></div>
+<svg class="wm" viewBox="0 0 2946 712" aria-hidden="true"><use href="#wm"/></svg>
 <div class="foot-links mono">
-<a class="link" href="https://www.instagram.com/azacub_" target="_blank" rel="noopener">Instagram @azacub_</a>
-<button class="link" data-go="subscribe">Subscribe</button>
+<a class="link" href="https://www.instagram.com/azacub_" target="_blank" rel="noopener">Instagram</a>
+<span class="clock"><span class="mute">London, UK</span><span class="ember" data-clock>--:--:--</span></span>
 </div>
 </footer>
 
@@ -284,19 +378,25 @@ form .btn,.gate .btn{width:100%}
 (function(){
 /* ==================================================================
    SETTINGS
-   subscribeUrl    The sign-up address from your newsletter service
-                   (its "form action URL"). While this is '' the
-                   Subscribe form explains it is not connected yet.
-   subscribeField  The name that service uses for the email box.
-                   Mailchimp uses 'EMAIL'. Many others use 'email'.
+   subscribeUrl    The address your Brevo form sends to: the action="..."
+                   value in Brevo's embed code. While this is '' the
+                   Subscribe forms say the list is not connected yet.
+   fields          The Brevo field names each answer is sent under. The
+                   names must match fields added to your Brevo form.
+   extraFields     Hidden fields Brevo's form expects alongside it.
+   cusdisAppId     The App ID from your Cusdis website settings. While
+                   this is '' each article says comments open soon.
+   whatsapp        The WhatsApp community invite link
+                   (https://chat.whatsapp.com/...). While this is '' the
+                   WhatsApp section stays hidden.
    instagram       The AZACUB Instagram.
    ================================================================== */
-var CONFIG={subscribeUrl:'',subscribeField:'EMAIL',instagram:'https://www.instagram.com/azacub_'};
+var CONFIG={subscribeUrl:'',fields:{email:'EMAIL',name:'FIRSTNAME',type:'CREATIVE_TYPE',location:'LOCATION',whatsapp:'WHATSAPP_REQUEST'},extraFields:{email_address_check:'',locale:'en'},whatsapp:'https://chat.whatsapp.com/HawZaTIDffPGzxIGj5vpEO',cusdisAppId:'',instagram:'https://www.instagram.com/azacub_'};
 
 /* ==================================================================
    BLOG POSTS: newest first. The first one is the lead feature at the
    top of the home page. Older ones move down automatically into
-   "Previous features" below the Member spotlight.
+   "More features" below the Artist spotlight.
    To add a post, copy the block between the { } below, paste it at
    the TOP of the list, and change the details.
      slug   short-name-with-dashes, used in the page link
@@ -313,29 +413,37 @@ var posts=[
 slug:'introducing-azacub',
 cat:'News',
 title:'Introducing AZACUB',
-date:'7 October 2026',
+date:'12 October 2026',
 img:'hero',
-alt:'Black and white profile portrait of Cubs, founder of AZACUB, looking upward',
-stand:'A creative network built in London, for creatives on the way up, wherever they are from.',
+alt:'Black and white profile portrait of Cubs looking upward',
+stand:'A commitment to my future self, and a record of the journey for anyone on the same road.',
 body:[
-"Every giant starts as a cub. That is the idea behind AZACUB: a network for creatives who are still on the way up, and who will get there faster together.",
-{h:'Why it exists'},
-"London runs on who you know. If you are not from the city, or you are just starting out, the doors can stay shut for years. Good work gets missed every day, and finding the right producer, vocalist or videographer usually means scrolling and hoping.",
-"AZACUB is built to change that in three ways.",
-"Get in. A trusted, vetted network that brings you into London's creative scene, wherever you are based.",
-"Get seen. Features on members' new work, written for the labels, creatives and industry people who should be hearing it.",
-"Get connected. Direct links to the people you need across skill sets: artists, producers, songwriters, engineers, photographers, videographers, designers, stylists and more.",
-{h:'Who is behind it'},
-{p:'AZACUB was founded by Cubs, an artist and producer from south-east London.',link:['Cubs on Instagram','https://www.instagram.com/cubs.x']},
-{h:'What happens next'},
-"This page is where we will share members' new releases and the stories behind them. Subscribe to the newsletter and follow @azacub_ on Instagram to be the first to hear when applications to join open."
+"I wish I had documented the journey up to now. I didn't, so this is where I start. Think of this blog as a commitment to my future self, made in public.",
+"I'm Cubs, an artist, producer and engineer from south-east London. The name comes from a simple idea: every giant starts as a cub. I'm still a cub in this industry, and I intend to be a giant.",
+{h:'Where it really started'},
+"I could begin with school music lessons, the drums, GCSE performance pieces, talent shows or karaoke. The real start came later, when I opened a studio space with friends and we tried to hire it out to the community.",
+"That was my first time in the booth. I recorded rap vocals, and I only made what I thought was socially acceptable at the time. As my confidence grew, so did my ability to write vulnerable songs and explore different genres.",
+"A few years later I set up a studio at home and started recording myself. That is where my engineering journey began. My journey as a producer is only starting now: I'm enrolling at university in south-east London to study production and sound engineering full time.",
+{h:'What NOCAP taught me'},
+"That first studio was part of a venture we branded NOCAP. It was more than a studio. We had NOCAP clothing, vlogs, events, the studio and even a record label.",
+"I learned quickly that we were spreading ourselves too thin. With that many avenues, no single one made substantial progress.",
+"So this time I'm doing one thing. I'm documenting what I do and what I learn, to build real connections while I study. It supports my studies, it strengthens how I learn, and it's manageable. If it also helps you avoid the mistakes I made, even better.",
+{h:'What you will find here'},
+"My take on the music industry. Here's a first one. In the UK scene right now, I'm not hearing much music that makes me feel something. A lot of it sounds made to be a hit, and I think that takes away the authenticity and raw emotion I want to hear channelled into a song.",
+"Artist spotlights. Any creative can be featured, not only artists. I look for three things: authenticity, vision and a clear brand image. The first spotlight is Ezeunaa, and you'll find him on the home page. If you work at a label, this is the section to watch.",
+"Life updates. I'm a father of two, and weekends belong to them. Monday to Friday is music making, studying, writing, reading, the gym and football. I'll be honest about how that balance goes.",
+{h:'Who this is for'},
+"Other creatives, who I hope will read this and relate. Labels looking for people worth hearing. And busy parents juggling family while chasing their dreams.",
+"I'm not writing this from the finish line. I'm a student again, a father of two and a cub in an industry full of giants, and I'm starting anyway.",
+"If there's something you've been putting off, start it this week, at a size you can manage. Small and steady beats big and abandoned. I learned that the hard way.",
+{p:'Subscribe to the newsletter to get each new post as it lands. Find me on Instagram:',link:['Cubs on Instagram','https://www.instagram.com/cubs.x']}
 ],
 links:[['AZACUB on Instagram','https://www.instagram.com/azacub_']]
 }
 ];
 
 /* ==================================================================
-   MEMBER SPOTLIGHT: change the details below to feature someone new.
+   ARTIST SPOTLIGHT: change the details below to feature someone new.
    Use img:'photo.jpg' for a photo uploaded to the same GitHub folder.
    To hide the section, replace everything after the = with null;
    The shape is:
@@ -369,17 +477,17 @@ if(p0){
 $('#lead').innerHTML='<button class="pic" data-post="'+p0.slug+'" aria-label="Read: '+esc(p0.title)+'"><img src="'+src(p0.img)+'" alt="'+esc(p0.alt||'')+'"></button>'+
 '<div class="txt"><div class="mono ember">Lead feature · '+esc(p0.cat)+'</div><h2 class="h-serif">'+esc(p0.title)+'</h2><p class="stand">'+esc(p0.stand||'')+'</p><div class="mono mute">Words: AZACUB · '+esc(p0.date||'')+'</div><div><button class="btn line" data-post="'+p0.slug+'">Read the feature</button></div></div>';
 }
-/* Previous features: everything after the newest post. Empty slots show
-   "coming soon" tiles until there are at least three older posts. */
+/* Previous features: everything after the newest post. The section stays
+   hidden until there is at least one older post. */
 var older=posts.slice(1).map(function(p){
 return '<button class="card" data-post="'+p.slug+'"><span class="pic"><img src="'+src(p.img)+'" alt="'+esc(p.alt||'')+'" loading="lazy"></span><span class="mono ember">'+esc(p.cat)+'</span><span class="ct">'+esc(p.title)+'</span><span class="mono mute">'+esc(p.date||'')+'</span></button>';
 });
-while(older.length<3){older.push('<div class="card soon" aria-hidden="true"><span class="pic"><span>Coming soon</span></span><span class="mono mute">Feature</span><span class="ct">Next feature on the way</span></div>');}
+$('#latest').hidden=!older.length;
 $('#cards').innerHTML=older.join('');
 if(spotlight){
 $('#spot').hidden=false;
 if(spotlight.img){$('#spot-pic').innerHTML='<img src="'+src(spotlight.img)+'" alt="'+esc(spotlight.alt||('Photo of '+spotlight.name))+'">'+(spotlight.img2?'<img src="'+src(spotlight.img2)+'" alt="'+esc(spotlight.alt2||('Photo of '+spotlight.name))+'">':'');if(spotlight.img2)$('#spot').classList.add('duo');}else{$('#spot-pic').hidden=true;$('#spot').style.gridTemplateColumns='1fr';}
-$('#spot-txt').innerHTML='<div class="mono ember">Member spotlight</div><h2 class="cond">'+esc(spotlight.name).toUpperCase()+'</h2><div class="mono mute">'+esc([spotlight.role,spotlight.where].filter(Boolean).join(' · '))+'</div><p>'+esc(spotlight.blurb||'')+'</p>'+(spotlight.why?'<div class="mono ember" style="margin-top:6px">Why he is in the spotlight</div><p style="color:var(--paper)">'+esc(spotlight.why)+'</p>':'')+'<div class="acts">'+(spotlight.link?'<a class="btn solid" href="'+esc(spotlight.link)+'" target="_blank" rel="noopener">'+esc(spotlight.linkLabel||'See their work')+'</a>':'')+(spotlight.link2?'<a class="btn line" href="'+esc(spotlight.link2)+'" target="_blank" rel="noopener">'+esc(spotlight.link2Label||'More')+'</a>':'')+'</div>';
+$('#spot-txt').innerHTML='<div class="mono ember">Artist spotlight</div><h2 class="cond">'+esc(spotlight.name).toUpperCase()+'</h2><div class="mono mute">'+esc([spotlight.role,spotlight.where].filter(Boolean).join(' · '))+'</div><p>'+esc(spotlight.blurb||'')+'</p>'+(spotlight.why?'<div class="mono ember" style="margin-top:6px">Why he is in the spotlight</div><p style="color:var(--paper)">'+esc(spotlight.why)+'</p>':'')+'<div class="acts">'+(spotlight.link?'<a class="btn line" href="'+esc(spotlight.link)+'" target="_blank" rel="noopener">'+esc(spotlight.linkLabel||'See their work')+'</a>':'')+(spotlight.link2?'<a class="btn line" href="'+esc(spotlight.link2)+'" target="_blank" rel="noopener">'+esc(spotlight.link2Label||'More')+'</a>':'')+'</div>';
 }
 
 function openPost(slug){
@@ -392,7 +500,21 @@ $('#a-body').innerHTML=(p.body||[]).map(function(b){if(b.h)return '<h2>'+esc(b.h
 var l=(p.links||[]).map(function(k){return '<a class="link mono" href="'+esc(k[1])+'" target="_blank" rel="noopener">'+esc(k[0])+'</a>';}).join('');
 $('#a-side').hidden=!l;$('#a-side').innerHTML='<div class="mono mute">Links</div>'+l;
 document.title=p.title+' — AZACUB';
+showComments(p);
 return true;
+}
+function showComments(p){
+var box=$('#cusdis_thread');
+if(!CONFIG.cusdisAppId){$('#c-note').textContent='Comments open soon.';box.innerHTML='';return;}
+box.innerHTML='';
+box.setAttribute('data-host','https://cusdis.com');
+box.setAttribute('data-app-id',CONFIG.cusdisAppId);
+box.setAttribute('data-page-id',p.slug);
+box.setAttribute('data-page-url',location.origin+location.pathname+'#/news/'+p.slug);
+box.setAttribute('data-page-title',p.title);
+box.setAttribute('data-theme','dark');
+if(window.CUSDIS){window.CUSDIS.initial();return;}
+if(!document.getElementById('cusdis-js')){var s=document.createElement('script');s.id='cusdis-js';s.async=true;s.defer=true;s.src='https://cusdis.com/js/cusdis.es.js';document.body.appendChild(s);}
 }
 function show(v){
 document.querySelectorAll('.view').forEach(function(s){s.hidden=s.dataset.view!==v;});
@@ -412,22 +534,67 @@ else{show('home');}
 }
 document.addEventListener('click',function(e){
 var b=e.target.closest('button,a');if(!b)return;
-if(b.dataset.go==='subscribe'){if(location.hash){location.hash='';}route();var s=$('#subscribe');s.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){$('#sub-email').focus({preventScroll:true});},400);}
+if(b.dataset.go==='subscribe'){$('#subscribe').scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){if(step!=='done'){var f=panel(step).querySelector('input,.qchip');if(f)f.focus({preventScroll:true});}},450);}
 else if(b.dataset.go){location.hash='';route();}
 else if(b.dataset.post){location.hash='/news/'+b.dataset.post;}
 });
 window.addEventListener('hashchange',route);
 
-var sf=$('#sub-form'),se=$('#sub-email'),sm=$('#sub-msg');
-se.name=CONFIG.subscribeField;
-if(CONFIG.subscribeUrl)sf.action=CONFIG.subscribeUrl;
-sf.addEventListener('submit',function(e){
-sm.style.color='';
-if(!se.checkValidity()||!se.value){e.preventDefault();sm.textContent='Enter a valid email address, like you@example.com.';se.focus();return;}
-if(!CONFIG.subscribeUrl){e.preventDefault();sm.textContent='The newsletter list is not connected yet. Follow @azacub_ on Instagram for now.';return;}
-sm.style.color='var(--paper)';
-sm.textContent='Thanks. A confirmation page has opened in a new tab to finish signing up.';
-setTimeout(function(){se.value='';},500);
+if(CONFIG.whatsapp){$('#q-wa').href=CONFIG.whatsapp;}else{$('#q-wa-opt').hidden=true;}
+function syncChoice(){var n=$('#q-consent').checked,w=$('#q-wa-req').checked&&!!CONFIG.whatsapp;
+$('#q-submit').textContent=(w&&!n)?'Continue':'Subscribe';
+$('#q-email-wrap').hidden=(w&&!n);
+panel(3).querySelector('.err').textContent='';}
+$('#q-consent').addEventListener('change',syncChoice);$('#q-wa-req').addEventListener('change',syncChoice);
+var quiz=$('#quiz'),step=1;
+var panel=function(s){return quiz.querySelector('.q-panel[data-step="'+s+'"]');};
+function go(s){
+quiz.querySelectorAll('.q-panel').forEach(function(p){p.hidden=p.dataset.step!==String(s);});
+step=s;
+if(s==='done'){$('#q-step').textContent='Done';$('#q-fill').style.width='100%';panel('done').focus();return;}
+$('#q-step').textContent='Step '+s+' of 3';$('#q-fill').style.width=(s*33.34)+'%';
+var f=panel(s).querySelector('input,.qchip');if(f)f.focus({preventScroll:true});
+}
+function fail(msg){var e=panel(step).querySelector('.err');e.textContent=msg;}
+function types(){
+var t=[].slice.call(quiz.querySelectorAll('.qchip[aria-pressed="true"]')).map(function(c){return c.dataset.type;});
+var i=t.indexOf('Something else');
+if(i>-1){var o=$('#q-other').value.trim();t.splice(i,1,o?o:'Something else');}
+return t;
+}
+quiz.addEventListener('click',function(e){
+var c=e.target.closest('.qchip');
+if(c){var on=c.getAttribute('aria-pressed')!=='true';c.setAttribute('aria-pressed',on);
+if(c.dataset.type==='Something else'){$('#q-other-wrap').hidden=!on;if(on)$('#q-other').focus();}
+panel(1).querySelector('.err').textContent='';return;}
+var b=e.target.closest('[data-q]');if(!b)return;
+var a=b.dataset.q;
+if(a==='back'){go(step-1);return;}
+if(step===1&&!types().length){fail('Pick at least one.');return;}
+if(step===2&&!$('#q-name').value.trim()){fail('Add your first name.');$('#q-name').focus();return;}
+if(a==='next'){fail('');go(step+1);return;}
+if(a==='submit'){
+var news=$('#q-consent').checked,wa=$('#q-wa-req').checked&&!!CONFIG.whatsapp,em=$('#q-email'),nm=$('#q-name').value.trim();
+if(!news&&!wa){fail(CONFIG.whatsapp?'Choose the newsletter, the WhatsApp community, or both.':'Tick the newsletter to subscribe.');return;}
+if(news){
+if(!em.value.trim()||!em.checkValidity()){fail('Enter a valid email address, like you@example.com.');em.focus();return;}
+if(!CONFIG.subscribeUrl){fail('The mailing list is not connected yet. Please check back soon.');return;}
+var f=$('#q-form');f.action=CONFIG.subscribeUrl;f.innerHTML='';
+var vals={};vals[CONFIG.fields.email]=em.value.trim();vals[CONFIG.fields.name]=nm;
+vals[CONFIG.fields.type]=types().join(', ');vals[CONFIG.fields.location]=$('#q-where').value.trim();
+vals[CONFIG.fields.whatsapp]=wa?'Yes':'No';
+Object.keys(CONFIG.extraFields||{}).forEach(function(k){vals[k]=CONFIG.extraFields[k];});
+Object.keys(vals).forEach(function(k){var h=document.createElement('input');h.type='hidden';h.name=k;h.value=vals[k];f.appendChild(h);});
+f.submit();
+}
+$('#q-done-h').textContent=(news?"You're in, ":'Nearly there, ')+nm+'.';
+$('#q-done-mail').hidden=!news;
+$('#q-done-wa').hidden=!wa;
+go('done');
+}
+});
+quiz.addEventListener('keydown',function(e){
+if(e.key==='Enter'&&e.target.tagName==='INPUT'&&e.target.type!=='checkbox'){e.preventDefault();var n=panel(step).querySelector('[data-q="next"],[data-q="submit"]');if(n)n.click();}
 });
 
 var fmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
