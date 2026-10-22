@@ -45,6 +45,11 @@ h1,h2,h3,p,figure{margin:0}
 
 .bar{position:sticky;top:0;z-index:5;background:var(--ink);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px 28px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
 .bar .wm{width:132px}
+.bar-r{display:flex;align-items:center;gap:18px}
+.views{display:inline-flex;align-items:center;gap:8px;color:var(--ember);font-family:var(--mono);font-size:13px;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.views svg{width:22px;height:22px}
+.views[hidden]{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .nav{display:flex;gap:clamp(16px,2.4vw,36px);font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
 .nav button{min-height:44px;border-bottom:1px solid transparent}
 .nav button[aria-current="page"]{border-bottom-color:var(--ember)}
@@ -264,7 +269,7 @@ form .btn,.gate .btn{width:100%}
 
 <header class="bar wrap">
 <button data-go="home" aria-label="AZACUB home"><svg class="wm" viewBox="0 0 2946 712" aria-hidden="true"><use href="#wm"/></svg></button>
-<button class="btn solid" data-go="join">Join</button>
+<div class="bar-r"><span class="views" id="views" hidden title="Total visits"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5.5 4.5 12 4.5 22.5 12 22.5 12 18.5 19.5 12 19.5 1.5 12 1.5 12Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="12" r="3.6" fill="currentColor"/></svg><span id="views-n"></span><span class="sr"> visits</span></span><button class="btn solid" data-go="join">Join</button></div>
 </header>
 
 <main>
@@ -381,10 +386,12 @@ form .btn,.gate .btn{width:100%}
    cusdisAppId  The App ID from your Cusdis website settings. While
                 this is '' each article says comments open soon.
    instagram    The AZACUB Instagram.
+   counter      Visit counter (free Abacus service). Each browser counts once per
+                visit; the number refreshes every 30 seconds. '' hides it.
    sheetUrl     The Google Apps Script web app link (ends in /exec). Quiz
                 answers are saved to your Google Sheet. '' saves nothing.
    ================================================================== */
-var CONFIG={telegram:'https://t.me/+Q_wHH23uHmliMTY0',cusdisAppId:'',instagram:'https://www.instagram.com/azacub_',sheetUrl:''};
+var CONFIG={telegram:'https://t.me/+Q_wHH23uHmliMTY0',cusdisAppId:'',instagram:'https://www.instagram.com/azacub_',sheetUrl:'',counter:'https://abacus.jasoncameron.dev/%s/azacub-web/visits'};
 
 /* ==================================================================
    BLOG POSTS: newest first. The first one is the lead feature at the
@@ -548,6 +555,18 @@ else if(b.dataset.post){location.hash='/news/'+b.dataset.post;}
 window.addEventListener('hashchange',route);
 
 $('#q-tg').href=CONFIG.telegram;
+(function(){
+if(!CONFIG.counter||!window.fetch)return;
+var el=$('#views'),n=$('#views-n'),counted=false;
+try{counted=sessionStorage.getItem('az-counted')==='1';}catch(x){}
+function call(mode){
+return fetch(CONFIG.counter.replace('%s',mode)).then(function(r){return r.ok?r.json():null;}).then(function(d){
+if(d&&typeof d.value==='number'){n.textContent=d.value.toLocaleString('en-GB');el.hidden=false;el.title=d.value.toLocaleString('en-GB')+' visits';}
+}).catch(function(){});
+}
+call(counted?'get':'hit').then(function(){if(!counted){try{sessionStorage.setItem('az-counted','1');}catch(x){}}});
+setInterval(function(){if(!document.hidden)call('get');},30000);
+})();
 if(CONFIG.sheetUrl)document.querySelectorAll('[data-sheet]').forEach(function(x){x.hidden=false;});
 var quiz=$('#quiz'),step=1,sent=false;
 var panel=function(s){return quiz.querySelector('.q-panel[data-step="'+s+'"]');};
