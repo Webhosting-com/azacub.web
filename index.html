@@ -171,7 +171,7 @@ a.person:hover b,a.person:hover .go{color:var(--ember)}
 .quiz{display:flex;flex-direction:column;gap:18px}
 .q-top{display:flex;flex-direction:column;gap:10px}
 .q-bar{height:2px;background:var(--line)}
-.q-bar i{display:block;height:2px;width:33%;background:var(--ember);transition:width .3s ease}
+.q-bar i{display:block;height:2px;width:50%;background:var(--ember);transition:width .3s ease}
 .q-panel{display:flex;flex-direction:column;gap:16px}
 .q-panel h3{font-size:clamp(22px,2.2vw,28px);font-weight:700}
 .q-panel .f input{width:100%;min-height:50px;background:transparent;color:var(--paper);border:0;border-bottom:1px solid var(--edge);border-radius:0;font-family:var(--sans);font-size:17px;padding:8px 2px}
@@ -184,25 +184,32 @@ a.person:hover b,a.person:hover .go{color:var(--ember)}
 .q-nav{display:flex;gap:10px;flex-wrap:wrap}
 .q-done h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.6vw,48px);letter-spacing:-.01em}
 .q-done p{color:var(--soft)}
-.q-done #q-done-wa{display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin-top:8px}
-.q-done #q-done-wa[hidden]{display:none}
-.steps{list-style:none;margin:10px 0 4px;padding:0;display:flex;flex-wrap:wrap;gap:10px 34px}
-.steps li{display:flex;align-items:baseline}
-.stp{font-family:var(--serif);font-size:clamp(22px,2.3vw,30px);line-height:1.2;color:var(--paper)}
-.stp{min-height:44px;display:inline-flex;align-items:center}
-button.stp:hover,a.stp:hover{color:var(--ember)}
-@media (max-width:860px){.steps{flex-direction:column;gap:2px}}
-.comments{scroll-margin-top:96px;max-width:820px;padding-bottom:clamp(44px,6vw,88px);display:flex;flex-direction:column;gap:12px}
-.comments h2{font-size:clamp(30px,3.4vw,46px)}
-#cusdis_thread{margin-top:10px;min-height:20px}
-#cusdis_thread iframe{width:100%;border:0}
-.opts{display:flex;flex-direction:column;gap:10px}
-.opt{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1px solid var(--edge);cursor:pointer}
-.opt:hover{border-color:var(--paper)}
-.opt:has(input:checked){border-color:var(--ember)}
-.opt input{width:22px;height:22px;flex:none;margin:1px 0 0;accent-color:var(--ember)}
-.opt span{display:flex;flex-direction:column;gap:4px;color:var(--soft);font-size:15px;line-height:1.4}
-.opt b{color:var(--paper);font-size:17px;font-weight:600}
+.q-done .q-intro{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--paper);padding:16px 18px;border-left:2px solid var(--ember);background:var(--tile)}
+.q-done .link{align-self:flex-start}
+.read{width:calc(100% - 40px);max-width:660px;margin:0 auto}
+.r-head{display:flex;flex-direction:column;gap:16px;padding-top:24px;padding-bottom:32px}
+.r-head .link{align-self:flex-start;margin-bottom:8px}
+.r-head h1{font-size:clamp(40px,6vw,68px);line-height:1.04}
+.r-stand{font-family:var(--serif);font-size:clamp(20px,2vw,24px);line-height:1.45;color:var(--soft)}
+.r-meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;letter-spacing:.16em;color:var(--mute);padding-top:16px;border-top:1px solid var(--line)}
+.r-meta b{font-weight:500;color:var(--paper)}
+.r-pic{margin:0 0 44px}
+.r-pic img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:50% 22%}
+.r-body{font-family:var(--serif);font-size:21px;line-height:1.75;color:#DCD6CB}
+.r-body p{margin:0 0 1.15em}
+.r-body>p:first-child{font-size:24px;line-height:1.6;color:var(--paper)}
+.r-body h2{font-family:var(--sans);font-size:23px;font-weight:700;line-height:1.3;color:var(--paper);margin:2.1em 0 .7em}
+.r-body h2:first-child{margin-top:0}
+.r-body a{color:var(--paper);text-decoration:underline;text-decoration-color:var(--ember);text-underline-offset:4px}
+.r-body a:hover{color:var(--ember)}
+.r-body blockquote{margin:1.6em 0;padding-left:20px;border-left:2px solid var(--ember);font-size:25px;line-height:1.45;color:var(--paper)}
+.r-body .sign{font-family:var(--sans);font-weight:700;font-size:18px;letter-spacing:.04em;color:var(--paper);margin-top:1.6em}
+.r-foot{display:flex;flex-wrap:wrap;align-items:center;gap:4px 24px;margin-top:40px;padding:20px 0 56px;border-top:1px solid var(--line)}
+.r-foot[hidden]{display:none}
+.read.comments{display:flex;flex-direction:column;gap:12px;padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(44px,6vw,88px);border-top:1px solid var(--line)}
+.rprog{position:sticky;top:69px;z-index:4;height:2px}
+.rprog i{display:block;height:2px;width:0;background:var(--ember)}
+@media (max-width:860px){.rprog{top:60px}.r-body{font-size:19px;line-height:1.7}.r-body>p:first-child{font-size:21px}.r-body h2{font-size:21px}.r-pic img{aspect-ratio:4/5}}
 .subs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,5vw,80px);align-items:start}
 .subrow{display:flex;gap:12px;align-items:stretch}
 .subrow input{flex:1;min-width:0;min-height:54px;background:transparent;color:var(--paper);border:0;border-bottom:1px solid var(--paper);border-radius:0;font-family:var(--sans);font-size:17px;padding:0 2px}
@@ -257,7 +264,7 @@ form .btn,.gate .btn{width:100%}
 
 <header class="bar wrap">
 <button data-go="home" aria-label="AZACUB home"><svg class="wm" viewBox="0 0 2946 712" aria-hidden="true"><use href="#wm"/></svg></button>
-<button class="btn solid" data-go="subscribe">Subscribe</button>
+<button class="btn solid" data-go="join">Join</button>
 </header>
 
 <main>
@@ -278,19 +285,20 @@ form .btn,.gate .btn{width:100%}
 </section>
 
 <section class="view" data-view="article" hidden>
-<div class="wrap" style="padding-top:16px"><button class="link mono" data-go="home">← All news</button></div>
-<div class="wrap art-head">
-<div class="mono ember" id="a-cat">Music</div>
+<div class="rprog" aria-hidden="true"><i id="rprog"></i></div>
+<article class="read">
+<header class="r-head">
+<button class="link mono" data-go="home">← Back</button>
+<div class="mono ember" id="a-cat"></div>
 <h1 class="h-serif" tabindex="-1" id="a-title"></h1>
-<p class="stand" id="a-stand"></p>
-<div class="mono mute" id="a-by"></div>
-</div>
-<div class="wrap art-pic"><img id="a-img" alt=""></div>
-<div class="wrap sec art-body">
-<div class="prose" id="a-body"></div>
-<aside class="side" id="a-side"></aside>
-</div>
-<div class="wrap comments" id="comments" aria-labelledby="c-h">
+<p class="r-stand" id="a-stand"></p>
+<div class="r-meta mono" id="a-by"></div>
+</header>
+<figure class="r-pic"><img id="a-img" alt=""></figure>
+<div class="r-body" id="a-body"></div>
+<footer class="r-foot" id="a-side"></footer>
+</article>
+<div class="read comments" id="comments" aria-labelledby="c-h">
 <div class="mono ember">Comments</div>
 <h2 class="h-serif" id="c-h">Leave your thoughts.</h2>
 <p class="hint" id="c-note">No account needed. Comments appear once they've been approved.</p>
@@ -298,14 +306,14 @@ form .btn,.gate .btn{width:100%}
 </div>
 </section>
 
-<section class="wrap rule sec subs" id="subscribe" aria-labelledby="sub-h">
+<section class="wrap rule sec subs" id="join" aria-labelledby="join-h">
 <div>
-<div class="mono ember">Stay connected</div>
-<h2 class="h-serif" id="sub-h">Don't miss the next one.</h2>
-<p class="stand">New posts and artist spotlights by email, and a WhatsApp community where creatives share work and collaborate. Choose one or both.</p>
+<div class="mono ember">The community</div>
+<h2 class="h-serif" id="join-h">Join the AZACUB community.</h2>
+<p class="stand">A mix of creatives sharing work, swapping skills and making things together. Post what you're working on, ask for what you need, and back each other.</p>
 </div>
 <div class="quiz" id="quiz">
-<div class="q-top"><span class="mono mute" id="q-step" aria-live="polite">Step 1 of 3</span><div class="q-bar" aria-hidden="true"><i id="q-fill"></i></div></div>
+<div class="q-top"><span class="mono mute" id="q-step" aria-live="polite">Step 1 of 2</span><div class="q-bar" aria-hidden="true"><i id="q-fill"></i></div></div>
 
 <div class="q-panel" data-step="1">
 <h3 id="q1-h">What kind of creative are you?</h3>
@@ -339,30 +347,21 @@ form .btn,.gate .btn{width:100%}
 <h3>A bit about you</h3>
 <div class="f"><label for="q-name">First name</label><input id="q-name" autocomplete="given-name" maxlength="40"></div>
 <div class="f"><label for="q-where">Where are you based? (optional)</label><input id="q-where" autocomplete="address-level2" placeholder="For example: Lewisham, Leeds, Lagos" maxlength="60"></div>
+<div class="f" data-sheet hidden><label for="q-tgu">Telegram username (optional)</label><input id="q-tgu" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="@yourname" maxlength="40"></div>
+<p class="hint" data-sheet hidden>Your username helps us match your join request so we can let you in faster. We keep these answers so we know who's joining, never share them, and will delete them if you ask.</p>
 <div class="err" role="alert"></div>
 <div class="q-nav"><button type="button" class="btn line" data-q="back">Back</button><button type="button" class="btn solid" data-q="next">Next</button></div>
 </div>
 
-<div class="q-panel" data-step="3" hidden>
-<h3 id="q3-h">How do you want to stay connected?</h3>
-<p class="hint">Choose one or both.</p>
-<div class="opts" role="group" aria-labelledby="q3-h">
-<label class="opt"><input type="checkbox" id="q-consent"><span><b>The newsletter</b>New posts and artist spotlights by email. Unsubscribe at any time.</span></label>
-<label class="opt" id="q-wa-opt"><input type="checkbox" id="q-wa-req"><span><b>The WhatsApp community</b>Request to join. Every member is approved by hand.</span></label>
-</div>
-<div class="f" id="q-email-wrap"><label for="q-email">Email address</label><input id="q-email" type="email" autocomplete="email" placeholder="you@example.com"></div>
-<div class="err" role="alert"></div>
-<div class="q-nav"><button type="button" class="btn line" data-q="back">Back</button><button type="button" class="btn solid" data-q="submit" id="q-submit">Subscribe</button></div>
-</div>
-
 <div class="q-panel q-done" data-step="done" hidden tabindex="-1">
-<h3 id="q-done-h">You're in.</h3>
-<p id="q-done-mail" hidden>Check your inbox and confirm your email to finish signing up to the newsletter.</p>
-<div id="q-done-wa" hidden><p>Last step: send your request to join the WhatsApp community. Every member is approved by hand, so it may take a little while.</p><a class="btn solid" id="q-wa" target="_blank" rel="noopener">Request to join on WhatsApp</a></div>
+<h3 id="q-done-h">Nearly in.</h3>
+<p>Here's an intro to post when you arrive, so people know who you are:</p>
+<p class="q-intro" id="q-intro"></p>
+<div class="q-nav"><a class="btn solid" id="q-tg" target="_blank" rel="noopener">Join on Telegram</a><button type="button" class="btn line" id="q-copy">Copy intro</button></div>
+<p class="hint" id="q-copied" role="status">Join requests are approved by hand, so it may take a little while.</p>
+<button type="button" class="link mono" data-q="restart">Start again</button>
 </div>
 </div>
-<form id="q-form" method="post" target="q-sink" hidden></form>
-<iframe name="q-sink" title="Sign-up" hidden></iframe>
 </section>
 </main>
 
@@ -378,20 +377,14 @@ form .btn,.gate .btn{width:100%}
 (function(){
 /* ==================================================================
    SETTINGS
-   subscribeUrl    The address your Brevo form sends to: the action="..."
-                   value in Brevo's embed code. While this is '' the
-                   Subscribe forms say the list is not connected yet.
-   fields          The Brevo field names each answer is sent under. The
-                   names must match fields added to your Brevo form.
-   extraFields     Hidden fields Brevo's form expects alongside it.
-   cusdisAppId     The App ID from your Cusdis website settings. While
-                   this is '' each article says comments open soon.
-   whatsapp        The WhatsApp community invite link
-                   (https://chat.whatsapp.com/...). While this is '' the
-                   WhatsApp section stays hidden.
-   instagram       The AZACUB Instagram.
+   telegram     The Telegram group's join link.
+   cusdisAppId  The App ID from your Cusdis website settings. While
+                this is '' each article says comments open soon.
+   instagram    The AZACUB Instagram.
+   sheetUrl     The Google Apps Script web app link (ends in /exec). Quiz
+                answers are saved to your Google Sheet. '' saves nothing.
    ================================================================== */
-var CONFIG={subscribeUrl:'',fields:{email:'EMAIL',name:'FIRSTNAME',type:'CREATIVE_TYPE',location:'LOCATION',whatsapp:'WHATSAPP_REQUEST'},extraFields:{email_address_check:'',locale:'en'},whatsapp:'https://chat.whatsapp.com/HawZaTIDffPGzxIGj5vpEO',cusdisAppId:'',instagram:'https://www.instagram.com/azacub_'};
+var CONFIG={telegram:'https://t.me/+Q_wHH23uHmliMTY0',cusdisAppId:'',instagram:'https://www.instagram.com/azacub_',sheetUrl:''};
 
 /* ==================================================================
    BLOG POSTS: newest first. The first one is the lead feature at the
@@ -406,39 +399,43 @@ var CONFIG={subscribeUrl:'',fields:{email:'EMAIL',name:'FIRSTNAME',type:'CREATIV
             {h:'...'} makes a sub-heading.
             {p:'...',link:['Label','https://...']} is a paragraph
             that ends with a link.
+            {h:'...'} sub-heading, {q:'...'} pull quote, {s:'...'} sign-off.
+     The word count and reading time are worked out automatically.
      links  [['Label','https://...'], ...]
    ================================================================== */
 var posts=[
 {
 slug:'introducing-azacub',
-cat:'News',
+cat:'Blog 1',
 title:'Introducing AZACUB',
-date:'12 October 2026',
+author:'Cubs',
+date:'22 October 2026',
 img:'hero',
 alt:'Black and white profile portrait of Cubs looking upward',
-stand:'A commitment to my future self, and a record of the journey for anyone on the same road.',
+stand:"Recently, I have been working full-time for my future self.",
 body:[
-"I wish I had documented the journey up to now. I didn't, so this is where I start. Think of this blog as a commitment to my future self, made in public.",
-"I'm Cubs, an artist, producer and engineer from south-east London. The name comes from a simple idea: every giant starts as a cub. I'm still a cub in this industry, and I intend to be a giant.",
-{h:'Where it really started'},
-"I could begin with school music lessons, the drums, GCSE performance pieces, talent shows or karaoke. The real start came later, when I opened a studio space with friends and we tried to hire it out to the community.",
-"That was my first time in the booth. I recorded rap vocals, and I only made what I thought was socially acceptable at the time. As my confidence grew, so did my ability to write vulnerable songs and explore different genres.",
-"A few years later I set up a studio at home and started recording myself. That is where my engineering journey began. My journey as a producer is only starting now: I'm enrolling at university in south-east London to study production and sound engineering full time.",
-{h:'What NOCAP taught me'},
-"That first studio was part of a venture we branded NOCAP. It was more than a studio. We had NOCAP clothing, vlogs, events, the studio and even a record label.",
-"I learned quickly that we were spreading ourselves too thin. With that many avenues, no single one made substantial progress.",
-"So this time I'm doing one thing. I'm documenting what I do and what I learn, to build real connections while I study. It supports my studies, it strengthens how I learn, and it's manageable. If it also helps you avoid the mistakes I made, even better.",
-{h:'What you will find here'},
-"My take on the music industry. Here's a first one. In the UK scene right now, I'm not hearing much music that makes me feel something. A lot of it sounds made to be a hit, and I think that takes away the authenticity and raw emotion I want to hear channelled into a song.",
-"Artist spotlights. Any creative can be featured, not only artists. I look for three things: authenticity, vision and a clear brand image. The first spotlight is Ezeunaa, and you'll find him on the home page. If you work at a label, this is the section to watch.",
-"Life updates. I'm a father of two, and weekends belong to them. Monday to Friday is music making, studying, writing, reading, the gym and football. I'll be honest about how that balance goes.",
-{h:'Who this is for'},
-"Other creatives, who I hope will read this and relate. Labels looking for people worth hearing. And busy parents juggling family while chasing their dreams.",
-"I'm not writing this from the finish line. I'm a student again, a father of two and a cub in an industry full of giants, and I'm starting anyway.",
-"If there's something you've been putting off, start it this week, at a size you can manage. Small and steady beats big and abandoned. I learned that the hard way.",
-{p:'Subscribe to the newsletter to get each new post as it lands. Find me on Instagram:',link:['Cubs on Instagram','https://www.instagram.com/cubs.x']}
+"As a Cub. A Mentee. A Work in Progress.",
+"Chasing your dreams isn't quite what it's made out to be.",
+"Nobody tells you about the endless wrong turns. The tiring efforts. The ideas that go nowhere. The setbacks that make you question whether you're even heading in the right direction.",
+"And yet, here I am.",
+"Still trying. Still learning. Still building.",
+{h:"The long way round"},
+"Music has lived rent free in my head and my heart for as long as I can remember. As a kid I'd hear harmonies that weren't on the record and melodies nobody had written yet, and I genuinely thought everyone could hear them too. My parents would tell me that what I was singing sounded nice, and I'd shrug it off. It was years before I realised most of it was coming from me.",
+"Growing up wasn't easy, though. There was enough going on to knock anyone's confidence, and that's as far as I'll go with it. What it meant was that the one thing that came naturally stayed hidden. I quietly explored it through drum and piano lessons, and by twelve I was writing over chords and singing from behind a drum kit at the same time. A wild combination, but it was mine.",
+"The years that followed were full, maybe too full. NOCAP, built with my friends, tried to be everything at once: a studio, a clothing brand, vlogs, events and a record label. It finally got me into a proper studio, but it also taught me the hard way what happens when you spread yourself too thin. Then lockdown came, and with it FF6, a community sports project I built from nothing that ended up working alongside Gloucester City and the council. I loved what it did for young people. But I'll be honest: standing at the side of a tournament with 250 people there, a quiet voice kept saying, imagine if this was your show. Imagine if these people were here for your music.",
+"Eventually the bills won and the stress won, so I said thank you and let it go. It felt like losing something and being set free in the same breath.",
+"Through every high and every low, music never really left. Mentoring young people in the studio kept me close to it. 2022 gave me a taste of making and releasing music properly. And becoming a dad taught me more about balance than anything else ever could.",
+"Which brings me to now. At 25, for the first time in my life, I'm going all in: studying production and sound engineering full time, making music, staying fit and being there for my family. Nothing else on the plate.",
+"If the journey has taught me one thing so far, it's this. Talent got me noticed at five years old, and that's about all it did. Everything since has been work: the late nights, the lessons, the wrong turns that eventually showed me which way was right. So if you've got a gift and you're sitting on it, I understand, because I sat on mine for years. But it won't build itself. You've got to put the hours in.",
+"As for where it's heading, I want to be a great. I want to make music for the rest of my life, moving from photo shoots to writing sessions to someone else's beat to my own release, and reach the point where it pays enough that I never have to work another day. I want to build a Cub's legacy, spread love through the music, and leave something good with everyone who listens, works with me or meets me. For now, the next three years are about learning, networking and graduating. After that, I don't believe there's a ceiling.",
+"By God's grace, I'm still here. Still going.",
+"AZACUB is my attempt to document the person I'm becoming, a record of the journey from here on out. The ideas I chase, the things I create, the mistakes I make, and the lessons I pick up along the way.",
+"I'm writing this not because I have it all figured out, but because I don't.",
+"Perhaps, somewhere along the way, another creative who is just starting out will find something useful here. Maybe an idea. Maybe some inspiration. Maybe even a mistake they can avoid making themselves.",
+"So follow along. It'll all be written down here.",
+{s:"AZACUB to wherever I end up."}
 ],
-links:[['AZACUB on Instagram','https://www.instagram.com/azacub_']]
+links:[['Cubs on Instagram','https://www.instagram.com/cubs.x'],['AZACUB on Instagram','https://www.instagram.com/azacub_']]
 }
 ];
 
@@ -475,7 +472,7 @@ var src=function(i){return IMGS[i]||i||'';};
 var p0=posts[0];
 if(p0){
 $('#lead').innerHTML='<button class="pic" data-post="'+p0.slug+'" aria-label="Read: '+esc(p0.title)+'"><img src="'+src(p0.img)+'" alt="'+esc(p0.alt||'')+'"></button>'+
-'<div class="txt"><div class="mono ember">Lead feature · '+esc(p0.cat)+'</div><h2 class="h-serif">'+esc(p0.title)+'</h2><p class="stand">'+esc(p0.stand||'')+'</p><div class="mono mute">Words: AZACUB · '+esc(p0.date||'')+'</div><div><button class="btn line" data-post="'+p0.slug+'">Read the feature</button></div></div>';
+'<div class="txt"><div class="mono ember">Lead feature · '+esc(p0.cat)+'</div><h2 class="h-serif">'+esc(p0.title)+'</h2><p class="stand">'+esc(p0.stand||'')+'</p><div class="mono mute">'+esc(p0.date||'')+' · '+stats(p0).mins+' min read</div><div><button class="btn line" data-post="'+p0.slug+'">Read the feature</button></div></div>';
 }
 /* Previous features: everything after the newest post. The section stays
    hidden until there is at least one older post. */
@@ -490,15 +487,22 @@ if(spotlight.img){$('#spot-pic').innerHTML='<img src="'+src(spotlight.img)+'" al
 $('#spot-txt').innerHTML='<div class="mono ember">Artist spotlight</div><h2 class="cond">'+esc(spotlight.name).toUpperCase()+'</h2><div class="mono mute">'+esc([spotlight.role,spotlight.where].filter(Boolean).join(' · '))+'</div><p>'+esc(spotlight.blurb||'')+'</p>'+(spotlight.why?'<div class="mono ember" style="margin-top:6px">Why he is in the spotlight</div><p style="color:var(--paper)">'+esc(spotlight.why)+'</p>':'')+'<div class="acts">'+(spotlight.link?'<a class="btn line" href="'+esc(spotlight.link)+'" target="_blank" rel="noopener">'+esc(spotlight.linkLabel||'See their work')+'</a>':'')+(spotlight.link2?'<a class="btn line" href="'+esc(spotlight.link2)+'" target="_blank" rel="noopener">'+esc(spotlight.link2Label||'More')+'</a>':'')+'</div>';
 }
 
+function plain(b){return b.h?b.h:b.q?b.q:b.s?b.s:b.p?b.p+(b.link?' '+b.link[0]:''):String(b);}
+function stats(p){
+var text=[p.stand||''].concat((p.body||[]).map(plain)).join(' ');
+var words=(text.match(/[A-Za-z0-9\u00C0-\u024F]+(?:['\u2019-][A-Za-z0-9\u00C0-\u024F]+)*/g)||[]).length;
+return {words:words,mins:Math.max(1,Math.round(words/230))};
+}
 function openPost(slug){
 var p=posts.filter(function(x){return x.slug===slug;})[0];
 if(!p)return false;
 $('#a-cat').textContent=p.cat;$('#a-title').textContent=p.title;$('#a-stand').textContent=p.stand||'';
-$('#a-by').textContent='Words: AZACUB · '+(p.date||'');
+var st=stats(p);
+$('#a-by').innerHTML='<span>By <b>'+esc(p.author||'Cubs')+'</b></span>'+(p.date?'<span>'+esc(p.date)+'</span>':'')+'<span>'+st.words.toLocaleString('en-GB')+' words</span><span>'+st.mins+' min read</span>';
 $('#a-img').src=src(p.img);$('#a-img').alt=p.alt||'';
-$('#a-body').innerHTML=(p.body||[]).map(function(b){if(b.h)return '<h2>'+esc(b.h)+'</h2>';if(b.p)return '<p>'+esc(b.p)+(b.link?' <a href="'+esc(b.link[1])+'" target="_blank" rel="noopener" style="color:var(--paper)">'+esc(b.link[0])+'</a>.':'')+'</p>';return '<p>'+esc(b)+'</p>';}).join('');
+$('#a-body').innerHTML=(p.body||[]).map(function(b){if(b.h)return '<h2>'+esc(b.h)+'</h2>';if(b.q)return '<blockquote>'+esc(b.q)+'</blockquote>';if(b.s)return '<p class="sign">'+esc(b.s)+'</p>';if(b.p)return '<p>'+esc(b.p)+(b.link?' <a href="'+esc(b.link[1])+'" target="_blank" rel="noopener" style="color:var(--paper)">'+esc(b.link[0])+'</a>.':'')+'</p>';return '<p>'+esc(b)+'</p>';}).join('');
 var l=(p.links||[]).map(function(k){return '<a class="link mono" href="'+esc(k[1])+'" target="_blank" rel="noopener">'+esc(k[0])+'</a>';}).join('');
-$('#a-side').hidden=!l;$('#a-side').innerHTML='<div class="mono mute">Links</div>'+l;
+$('#a-side').hidden=!l;$('#a-side').innerHTML='<span class="mono mute">Links</span>'+l;
 document.title=p.title+' — AZACUB';
 showComments(p);
 return true;
@@ -516,6 +520,8 @@ box.setAttribute('data-theme','dark');
 if(window.CUSDIS){window.CUSDIS.initial();return;}
 if(!document.getElementById('cusdis-js')){var s=document.createElement('script');s.id='cusdis-js';s.async=true;s.defer=true;s.src='https://cusdis.com/js/cusdis.es.js';document.body.appendChild(s);}
 }
+function prog(){var a=document.querySelector('.read');if(!a||a.closest('[hidden]'))return;var r=a.getBoundingClientRect(),h=r.height-innerHeight;var f=h>0?Math.min(1,Math.max(0,-r.top/h)):1;$('#rprog').style.width=(f*100)+'%';}
+window.addEventListener('scroll',prog,{passive:true});window.addEventListener('resize',prog);
 function show(v){
 document.querySelectorAll('.view').forEach(function(s){s.hidden=s.dataset.view!==v;});
 document.querySelectorAll('[data-nav]').forEach(function(b){
@@ -526,6 +532,7 @@ if(v!=='article')document.title='AZACUB — A work in progress, in writing';
 window.scrollTo(0,0);
 var h=document.querySelector('[data-view="'+v+'"] h1[tabindex]');
 if(h)h.focus({preventScroll:true});
+prog();
 }
 function route(){
 var h=location.hash.replace(/^#\/?/,'');
@@ -534,67 +541,72 @@ else{show('home');}
 }
 document.addEventListener('click',function(e){
 var b=e.target.closest('button,a');if(!b)return;
-if(b.dataset.go==='subscribe'){$('#subscribe').scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){if(step!=='done'){var f=panel(step).querySelector('input,.qchip');if(f)f.focus({preventScroll:true});}},450);}
+if(b.dataset.go==='join'){$('#join').scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){var f=step==='done'?null:panel(step).querySelector('input,.qchip');if(f)f.focus({preventScroll:true});},450);}
 else if(b.dataset.go){location.hash='';route();}
 else if(b.dataset.post){location.hash='/news/'+b.dataset.post;}
 });
 window.addEventListener('hashchange',route);
 
-if(CONFIG.whatsapp){$('#q-wa').href=CONFIG.whatsapp;}else{$('#q-wa-opt').hidden=true;}
-function syncChoice(){var n=$('#q-consent').checked,w=$('#q-wa-req').checked&&!!CONFIG.whatsapp;
-$('#q-submit').textContent=(w&&!n)?'Continue':'Subscribe';
-$('#q-email-wrap').hidden=(w&&!n);
-panel(3).querySelector('.err').textContent='';}
-$('#q-consent').addEventListener('change',syncChoice);$('#q-wa-req').addEventListener('change',syncChoice);
-var quiz=$('#quiz'),step=1;
+$('#q-tg').href=CONFIG.telegram;
+if(CONFIG.sheetUrl)document.querySelectorAll('[data-sheet]').forEach(function(x){x.hidden=false;});
+var quiz=$('#quiz'),step=1,sent=false;
 var panel=function(s){return quiz.querySelector('.q-panel[data-step="'+s+'"]');};
 function go(s){
 quiz.querySelectorAll('.q-panel').forEach(function(p){p.hidden=p.dataset.step!==String(s);});
 step=s;
-if(s==='done'){$('#q-step').textContent='Done';$('#q-fill').style.width='100%';panel('done').focus();return;}
-$('#q-step').textContent='Step '+s+' of 3';$('#q-fill').style.width=(s*33.34)+'%';
+if(s==='done'){$('#q-step').textContent='Ready';$('#q-fill').style.width='100%';panel('done').focus();return;}
+$('#q-step').textContent='Step '+s+' of 2';$('#q-fill').style.width=(s*50)+'%';
 var f=panel(s).querySelector('input,.qchip');if(f)f.focus({preventScroll:true});
 }
-function fail(msg){var e=panel(step).querySelector('.err');e.textContent=msg;}
+function fail(msg){var e=panel(step).querySelector('.err');if(e)e.textContent=msg;}
 function types(){
 var t=[].slice.call(quiz.querySelectorAll('.qchip[aria-pressed="true"]')).map(function(c){return c.dataset.type;});
 var i=t.indexOf('Something else');
-if(i>-1){var o=$('#q-other').value.trim();t.splice(i,1,o?o:'Something else');}
+if(i>-1){var o=$('#q-other').value.trim();if(o)t.splice(i,1,o);else t.splice(i,1);}
 return t;
+}
+function intro(){
+var name=$('#q-name').value.trim(),where=$('#q-where').value.trim(),t=types();
+var listen=t.indexOf('Just here to listen')>-1;t=t.filter(function(x){return x!=='Just here to listen';});
+t=t.map(function(x){return (x==='DJ'||x==='A&R')?x:x.toLowerCase();});
+var role='';
+if(t.length){var list=t.length>1?t.slice(0,-1).join(', ')+' and '+t[t.length-1]:t[0];role=(/^[aeiou]/i.test(t[0])&&t[0]!=='A&R'||t[0]==='A&R'?'an ':'a ')+list;}
+var s="Hi, I'm "+name;
+if(role)s+=', '+role;
+if(where)s+=(role?' from ':' from ')+where;
+s+='.';
+if(listen)s+=role?" Also here to listen and learn.":" I'm here to listen and learn.";
+return s;
 }
 quiz.addEventListener('click',function(e){
 var c=e.target.closest('.qchip');
 if(c){var on=c.getAttribute('aria-pressed')!=='true';c.setAttribute('aria-pressed',on);
 if(c.dataset.type==='Something else'){$('#q-other-wrap').hidden=!on;if(on)$('#q-other').focus();}
-panel(1).querySelector('.err').textContent='';return;}
+fail('');return;}
+if(e.target.id==='q-copy'){
+var txt=$('#q-intro').textContent,done=function(){$('#q-copied').textContent='Intro copied. Paste it in the group once you are in.';};
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(txt).then(done,function(){sel();});}else{sel();}
+function sel(){var r=document.createRange();r.selectNodeContents($('#q-intro'));var g=getSelection();g.removeAllRanges();g.addRange(r);try{document.execCommand('copy');done();}catch(x){$('#q-copied').textContent='Select the intro and copy it.';}}
+return;}
 var b=e.target.closest('[data-q]');if(!b)return;
 var a=b.dataset.q;
+if(a==='restart'){quiz.querySelectorAll('.qchip').forEach(function(x){x.setAttribute('aria-pressed','false');});$('#q-other').value='';$('#q-other-wrap').hidden=true;$('#q-name').value='';$('#q-where').value='';$('#q-tgu').value='';sent=false;go(1);return;}
 if(a==='back'){go(step-1);return;}
-if(step===1&&!types().length){fail('Pick at least one.');return;}
-if(step===2&&!$('#q-name').value.trim()){fail('Add your first name.');$('#q-name').focus();return;}
-if(a==='next'){fail('');go(step+1);return;}
-if(a==='submit'){
-var news=$('#q-consent').checked,wa=$('#q-wa-req').checked&&!!CONFIG.whatsapp,em=$('#q-email'),nm=$('#q-name').value.trim();
-if(!news&&!wa){fail(CONFIG.whatsapp?'Choose the newsletter, the WhatsApp community, or both.':'Tick the newsletter to subscribe.');return;}
-if(news){
-if(!em.value.trim()||!em.checkValidity()){fail('Enter a valid email address, like you@example.com.');em.focus();return;}
-if(!CONFIG.subscribeUrl){fail('The mailing list is not connected yet. Please check back soon.');return;}
-var f=$('#q-form');f.action=CONFIG.subscribeUrl;f.innerHTML='';
-var vals={};vals[CONFIG.fields.email]=em.value.trim();vals[CONFIG.fields.name]=nm;
-vals[CONFIG.fields.type]=types().join(', ');vals[CONFIG.fields.location]=$('#q-where').value.trim();
-vals[CONFIG.fields.whatsapp]=wa?'Yes':'No';
-Object.keys(CONFIG.extraFields||{}).forEach(function(k){vals[k]=CONFIG.extraFields[k];});
-Object.keys(vals).forEach(function(k){var h=document.createElement('input');h.type='hidden';h.name=k;h.value=vals[k];f.appendChild(h);});
-f.submit();
-}
-$('#q-done-h').textContent=(news?"You're in, ":'Nearly there, ')+nm+'.';
-$('#q-done-mail').hidden=!news;
-$('#q-done-wa').hidden=!wa;
-go('done');
-}
+if(step===1){if(!types().length&&!quiz.querySelector('.qchip[data-type="Something else"][aria-pressed="true"]')){fail('Pick at least one.');return;}
+if(quiz.querySelector('.qchip[data-type="Something else"][aria-pressed="true"]')&&!$('#q-other').value.trim()){fail('Tell us what you do.');$('#q-other').focus();return;}
+fail('');go(2);return;}
+if(step===2){if(!$('#q-name').value.trim()){fail('Add your first name.');$('#q-name').focus();return;}
+fail('');$('#q-done-h').textContent='Nearly in, '+$('#q-name').value.trim()+'.';$('#q-intro').textContent=intro();
+$('#q-copied').textContent='Join requests are approved by hand, so it may take a little while.';save();go('done');}
 });
+function save(){
+if(sent||!CONFIG.sheetUrl)return;sent=true;
+var u=$('#q-tgu').value.trim().replace(/^@+/,'').replace(/^https?:\/\/t\.me\//i,'');
+var data={name:$('#q-name').value.trim(),types:types().join(', '),where:$('#q-where').value.trim(),telegram:u?'@'+u:'',intro:$('#q-intro').textContent,page:location.hash||'#/'};
+try{fetch(CONFIG.sheetUrl,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data),keepalive:true}).catch(function(){});}catch(x){}
+}
 quiz.addEventListener('keydown',function(e){
-if(e.key==='Enter'&&e.target.tagName==='INPUT'&&e.target.type!=='checkbox'){e.preventDefault();var n=panel(step).querySelector('[data-q="next"],[data-q="submit"]');if(n)n.click();}
+if(e.key==='Enter'&&e.target.tagName==='INPUT'){e.preventDefault();var n=panel(step).querySelector('[data-q="next"]');if(n)n.click();}
 });
 
 var fmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
